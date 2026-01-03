@@ -41,8 +41,9 @@ class action_plugin_etherpadlite_etherpadlite extends DokuWiki_Action_Plugin {
             $this->domain = $_SERVER["HTTP_HOST"];
         }
         $this->ep_url = rtrim(trim($this->getConf('etherpadlite_url')),"/");
-        $ep_key = trim($this->getConf('etherpadlite_apikey'));
-        $this->ep_instance = new EtherpadLiteClient($ep_key, $this->ep_url."/api");
+        $ep_client_id = trim($this->getConf('etherpadlite_client_id'));
+        $ep_client_secret = trim($this->getConf('etherpadlite_client_secret'));
+        $this->ep_instance = new EtherpadLiteClient($ep_client_id, $ep_client_secret, $this->ep_url);
         $this->ep_group = trim($this->getConf('etherpadlite_group'));
         $this->ep_url_args = trim($this->getConf('etherpadlite_urlargs'));
         $this->groupid = $this->ep_instance->createGroupIfNotExistsFor($this->ep_group);

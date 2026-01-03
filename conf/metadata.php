@@ -7,7 +7,8 @@
 
 
 $meta['etherpadlite_url'] = array('string');
-$meta['etherpadlite_apikey'] = array('string');
+$meta['etherpadlite_client_id'] = array('string');
+$meta['etherpadlite_client_secret'] = array('string');
 $meta['etherpadlite_group']  = array('string');
 $meta['etherpadlite_domain']  = array('string');
 $meta['etherpadlite_urlargs'] = array('string');
